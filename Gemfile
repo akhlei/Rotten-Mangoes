@@ -29,6 +29,10 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Gems for file upload and image management 
+gem 'mini_magick' 
+gem 'carrierwave'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
