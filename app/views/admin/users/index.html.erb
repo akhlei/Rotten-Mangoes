@@ -1,3 +1,10 @@
 <h1>Users</h1>
 <%= link_to "Back to home page!", root_path %>
 
+<% @users.each do |user| %><br>
+  <h3>User:</h3>
+  <p><%= user.firstname %>, <%= user.lastname %></p>
+  <p><%= user.email %></p>
+<% end %>
+
+
