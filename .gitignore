@@ -16,5 +16,5 @@
 /tmp
 
 # Ignore mac default files
-.DS_Store
+/.DS_Store
 /test/*
