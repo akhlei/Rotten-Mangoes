@@ -52,7 +52,7 @@ class MoviesController < ApplicationController
   # made to pass in the parameters needed for a movie more easily in other parts of my code 
   def movie_params
     params.require(:movie).permit(
-      :title, :release_date, :director, :runtime_in_minutes, :poster_image_url, :description
+      :title, :release_date, :director, :runtime_in_minutes, :poster, :description
     )
   end
 end
