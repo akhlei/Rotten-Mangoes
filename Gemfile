@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Gems for file upload and image management 
 gem 'carrierwave'
-gem "rmagick", :require => 'RMagick'
+gem "rmagick", :require => 'rmagick'
 gem 'mini_magick' 
 
 # Use unicorn as the app server
