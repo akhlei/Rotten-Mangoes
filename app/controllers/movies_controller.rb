@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
   # if it properly saves, go to the all movies page, otherwise go to the 'new' page again
   def create
     @movie = Movie.new(movie_params)
+    @movie.poster = params[:poster]
 
     if @movie.save
       redirect_to movies_path, notice: "#{@movie.title} was successfully submitted!"

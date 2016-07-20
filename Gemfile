@@ -30,8 +30,9 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 
 # Gems for file upload and image management 
-gem 'mini_magick' 
 gem 'carrierwave'
+gem "rmagick", :require => 'RMagick'
+gem 'mini_magick' 
 
 # Use unicorn as the app server
 # gem 'unicorn'
