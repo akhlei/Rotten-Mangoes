@@ -52,7 +52,8 @@ class Admin::UsersController < ApplicationController
     if current_user.admin?
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to admin_users_path
+      UserMailer.deletion_email(@user)
+      redirect_to admin_users_path, notice: "User #{@user.email} was successfully deleted."
     else
       not_admin_redirect
     end
