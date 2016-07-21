@@ -34,6 +34,9 @@ gem 'carrierwave'
 gem "rmagick", :require => 'rmagick'
 gem 'mini_magick' 
 
+# Pagination for AR models
+gem 'kaminari'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
