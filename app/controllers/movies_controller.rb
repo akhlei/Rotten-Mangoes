@@ -1,21 +1,10 @@
 class MoviesController < ApplicationController
   def index
-    #TODO 
-    # Implement runtime search utilising params[:runtime_in_minutes] 
-    # Whats the best way to approach utilising all 3... 
-    # All the if/elsif/else statements are extremely clunky 
-
-
-
     if params[:search]
-      @movies = Movie.where("title like ? OR director like ?", params[:search], params[:search])
-    elsif params[:runtime_in_minutes]
-      @movies = Movie.where("runtime_in_minutes")
+      @movies = Movie.where("title like ? OR director like ?", "%#{params[:search]}%", "%#{params[:search]}%").where(runtime_cases)
     else
       @movies = Movie.all
     end
-
-
   end
 
   def show
@@ -76,5 +65,13 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(
       :title, :release_date, :director, :runtime_in_minutes, :poster, :description
     )
+  end
+
+  def runtime_cases
+    case params[:runtime_in_minutes]
+    when "1" then "runtime_in_minutes <= 90"
+    when "2" then "runtime_in_minutes BETWEEN 90 AND 120"
+    when "3" then "runtime_in_minutes >= 120"
+    end
   end
 end
