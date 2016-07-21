@@ -3,11 +3,13 @@ class ReviewsController < ApplicationController
   before_filter :load_movie  #loads the parent resource to reviews, which is nested in movies as a reference
 
   def new
+    @movie = Movie.find(params[:movie_id])
     @review = @movie.reviews.build   #equivalent to @review = Review.new(movie_id: @movie.id)
   end
 
   def create
-    @review = @movie.reviews.build(reviews_params)
+    @movie = Movie.find(params[:movie_id])
+    @review = @movie.reviews.build(review_params)
     @review.user_id = current_user.id
 
     if @review.save
