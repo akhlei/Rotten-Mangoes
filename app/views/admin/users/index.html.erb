@@ -2,10 +2,10 @@
 <%= link_to "Back to home page!", root_path %>
 
 <%= paginate @users %>
+
 <% @users.each do |user| %><br>
-  <h3>User:</h3>
+  <h3><%= link_to user.email, admin_user_path(user) %></h3>
   <p><%= user.firstname %>, <%= user.lastname %></p>
-  <p><%= user.email %></p>
 <% end %>
 
 

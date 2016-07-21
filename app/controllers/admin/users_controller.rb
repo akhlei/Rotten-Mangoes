@@ -4,7 +4,16 @@ class Admin::UsersController < ApplicationController
       @users = User.all.page(params[:page]).per(10)
       render :index
     else
-      redirect_to root_path, notice: "Get out! You must be an admin to view that page!"
+      not_admin_redirect
+    end
+  end
+
+  def show 
+    if current_user.admin?
+      @users = User.find(params[:id])
+      render :show
+    else
+      not_admin_redirect
     end
   end
 end
