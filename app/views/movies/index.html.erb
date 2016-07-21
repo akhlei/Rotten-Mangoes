@@ -12,11 +12,8 @@ SQL LIKE based simply search terms
 
 -->
 <%= form_tag("/movies", method: "get") do %>
-  <%= label_tag(:title, "Search by title:") %>
-  <%= text_field_tag(:title) %>
-
-  <%= label_tag(:director, "Search by director:") %>
-  <%= text_field_tag(:director) %>
+  <%= label_tag(:search, "Search") %>
+  <%= text_field_tag(:search) %>
 
   <%= label_tag(:runtime_in_minutes, "Runtime") %>
   <%= select_tag(:runtime_in_minutes, options_for_select([['Under 90 minutes'],['90-120 minutes'],['Over 90 minutes']])) %>

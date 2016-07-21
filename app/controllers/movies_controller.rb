@@ -1,10 +1,21 @@
 class MoviesController < ApplicationController
   def index
-    if params[:title] || params[:director]
-      @movies = Movie.where("title like ? OR director like ?", params[:title], params[:director])
+    #TODO 
+    # Implement runtime search utilising params[:runtime_in_minutes] 
+    # Whats the best way to approach utilising all 3... 
+    # All the if/elsif/else statements are extremely clunky 
+
+
+
+    if params[:search]
+      @movies = Movie.where("title like ? OR director like ?", params[:search], params[:search])
+    elsif params[:runtime_in_minutes]
+      @movies = Movie.where("runtime_in_minutes")
     else
       @movies = Movie.all
     end
+
+
   end
 
   def show
