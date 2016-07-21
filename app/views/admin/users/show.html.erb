@@ -1,1 +1,5 @@
-show.html.erb
+<%= link_to "Back to admin user page", admin_users_path %><br>
+
+<h3>Email:</h3><p><%= @user.email %></p>
+<p><h3>First Name:</h3> <%= @user.firstname %> <h3>Last Name:</h3> <%= @user.lastname %></p>
+<p><h3>Password: (I probably shouldn't show this) </h3><%= @user.password_digest %></p> 

@@ -10,7 +10,7 @@ class Admin::UsersController < ApplicationController
 
   def show 
     if current_user.admin?
-      @users = User.find(params[:id])
+      @user = User.find(params[:id])
       render :show
     else
       not_admin_redirect
