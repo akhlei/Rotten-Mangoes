@@ -41,7 +41,7 @@ class Admin::UsersController < ApplicationController
       if @user.save
         redirect_to admin_users_path, notice: "User with email: #{@user.email} was successfully created!"
       else
-        render :new
+        render :new # TODO: this needs to render the admin/new not the regular users/new
       end
     else
       not_admin_redirect
