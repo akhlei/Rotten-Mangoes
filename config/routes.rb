@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'users/create'
 
+
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
