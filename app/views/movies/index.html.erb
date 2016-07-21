@@ -1,6 +1,27 @@
 <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a new movie!", new_movie_path %>
 <hr>
+
+<!-- 
+TODO: Implement search function for movies lsit. Search form includes
+Title (text), Director (text), Duration (dropdown w/ 3 options: Under 90, 90-120, over 120 minutes), Submit Button
+All empty by default. Don't need them filled for query 
+
+SQL LIKE based simply search terms
+
+
+-->
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:title, "Search by title:") %>
+  <%= text_field_tag(:title) %>
+
+  <%= label_tag(:director, "Search by director:") %>
+  <%= text_field_tag(:director) %>
+
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <% @movies.each do |movie| %>
   <%= link_to image_tag(movie.poster.small), movie_path(movie) %>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
