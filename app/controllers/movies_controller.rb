@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @movies = Movie.where("title like ?", "#{params[:title]}") if params[:title] 
+
   end
 
   def show
@@ -13,6 +15,12 @@ class MoviesController < ApplicationController
 
   def edit
     @movie = Movie.find(params[:id])
+  end
+
+
+  # need a search action to do something. Here is where I would put my query options
+  def search
+
   end
 
   # @movie is a new movie passing in the parameters from this create page

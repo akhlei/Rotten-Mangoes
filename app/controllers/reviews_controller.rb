@@ -8,11 +8,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @movie = Movie.find(params[:movie_id])
-    @review = @movie.reviews.build(review_params)
-    @review.user_id = current_user.id
+    movie = Movie.find(params[:movie_id])
+    review = movie.reviews.build(review_params)
+    review.user_id = current_user.id
 
-    if @review.save
+    if review.save
       redirect_to @movie, notice: "Review created successfully"
     else
       render :new
