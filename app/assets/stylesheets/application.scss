@@ -24,7 +24,15 @@ $brand-experiment-orange: #E7933E;
 
 /* Class specific CSS */
 
+.alert-success div {
+  font-family: 'Helvetica', sans-serif;
+  margin-bottom: auto;
+  margin-top: auto; 
+}
 
+.small-poster {
+  width: 360px;
+}
 .navbar-static-top h2 a {
   text-decoration: none;
   line-height: 20px;
@@ -35,11 +43,6 @@ $brand-experiment-orange: #E7933E;
     margin-right: 0;
 }
 
-.alert-success div {
-  font-family: 'Helvetica', sans-serif;
-  margin-bottom: auto;
-  margin-top: auto; 
-}
 
 
 /* Selector specific CSS */

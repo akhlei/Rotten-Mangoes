@@ -1,11 +1,21 @@
-<%= link_to "Back to all movies", movies_path %><br>
+<div class="row">
+  <div class="col-lg-3">
+    <%= link_to "Back to all movies", movies_path, class: "btn btn-md btn-primary" %>
+  </div>
+</div>
+<br>
 
-<%= link_to image_tag(@movie.poster), movie_path(@movie) %>
-<h2><%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: {confirm: "You sure?"} %>)</h2>
-<h3><%= formatted_date(@movie.release_date) %></h3>
-<h4>Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
-<p><%= @movie.description %></p>
-
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to image_tag(@movie.poster, class: "img-responsive"), movie_path(@movie) %>
+  </div>
+  <div class="col-md-6">
+    <h2> <%= @movie.title %> (<%= link_to "edit", edit_movie_path(@movie) %>, <%= link_to "delete", movie_path(@movie), method: :delete, data: {confirm: "You sure?"} %>)</h2>
+    <h3><%= formatted_date(@movie.release_date) %></h3>
+    <h4>Dir. <%= @movie.director %> | <%= @movie.runtime_in_minutes %> minutes</h4>
+    <p><%= @movie.description %></p>
+  </div>
+</div>
 <hr>
 
 <h3>Review of <em><%= @movie.title %></em></h3>

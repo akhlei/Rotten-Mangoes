@@ -6,7 +6,9 @@
   font-family: 'Raleway', sans-serif;
 }
 
-#inner-col {
-  padding: 0;
+.poster-responsive {
+  height: auto; 
+  width: auto; 
+  max-width: 300px; 
+  max-height: 300px;
 }
-
