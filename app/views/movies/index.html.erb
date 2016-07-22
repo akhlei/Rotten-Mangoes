@@ -1,32 +1,42 @@
 <main> 
   <section class="row">
-  <div class="col-md-2">
-    <%= link_to "Submit a new movie!", new_movie_path, class: "btn btn-primary" %>
+  <div class="col-md-3">
+    <%= link_to "Submit a new movie!", new_movie_path, class: "btn btn-lg btn-primary" %>
   </div>
-  <div class="col-md-10">
-    <%= form_tag("/movies", method: "get") do %>
-      <%= label_tag(:search, "Search") %>
-      <%= text_field_tag(:search) %>
-
+  <div class="col-md-6">
+    <%= form_tag("/movies", method: "get", class: "form-inline") do %>
+      <div class="form-group">
+        <%= label_tag(:search, "Search") %>
+        <%= text_field_tag(:search) %>
+      </div>
+      <div class="form-group">
       <%= label_tag(:runtime_in_minutes, "Runtime") %>
-      <%= select_tag(:runtime_in_minutes, options_for_select([['Under 90 minutes', 1],['90-120 minutes', 2],['Over 120 minutes', 3]], 3)) %>
-
+      <%= select_tag(:runtime_in_minutes, options_for_select([['Under 90 minutes', 1],['90-120 minutes', 2],['Over 120 minutes', 3]], 3), class: "btn btn-default dropdown-toggle") %>
+      </div>
       <%= submit_tag("Search") %>
     <% end %>
-    </div>
+  </div>
+  <div class="col-md-3">
+  </div>
   </section>
   <br>
 
 
-  <% @movies.each do |movie| %>
-    <%= link_to image_tag(movie.poster.small), movie_path(movie) %>
-    <h2><%= link_to movie.title, movie_path(movie) %></h2>
-    <h3><%= formatted_date(movie.release_date) %></h3>
-    <h4>Dir. <%=  movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-    <h4> <%= movie.review_average %>/10 </h4>
-    <p><%= movie.description %></p>
-    <hr>
-  <% end %>
+    <% @movies.each do |movie| %>
+    <section class="row">
+      <div class="col-md-3">
+      <%= link_to image_tag(movie.poster.small), movie_path(movie) %>
+      </div>
+      <div class="col-md-9">
+      <h2><%= link_to movie.title, movie_path(movie) %></h2>
+      <h3><%= formatted_date(movie.release_date) %></h3>
+      <h4>Dir. <%=  movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+      <h4> <%= movie.review_average %>/10 </h4>
+      <p><%= movie.description %></p>
+      </div>
+      </section>
+      <hr>
+    <% end %>
 </main>
 
 
