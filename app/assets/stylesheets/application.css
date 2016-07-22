@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-static-top h2 a {
+  text-decoration: none;
+  line-height: 20px;
+}
