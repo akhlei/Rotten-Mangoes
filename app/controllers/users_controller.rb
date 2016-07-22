@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to movies_path, notice: "Thanks for joining, #{@user.firstname}!"
+      redirect_to movies_path, success: "Thanks for joining, #{@user.firstname}!"
     else
       render :new
     end
