@@ -30,12 +30,17 @@ $brand-experiment-orange: #E7933E;
   margin-top: auto; 
 }
 
+.navbar-default {
+  background-color: $brand-experiment-orange;
+  margin-bottom: 10px;
+}
+
+.container {
+  background: $brand-experiment-orange, 50%;
+}
+
 .small-poster {
   width: 360px;
-}
-.navbar-static-top h2 a {
-  text-decoration: none;
-  line-height: 20px;
 }
 
 .row {
@@ -43,7 +48,18 @@ $brand-experiment-orange: #E7933E;
     margin-right: 0;
 }
 
-
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  transform: scale(1.05);
+}
 
 /* Selector specific CSS */
 
@@ -54,4 +70,16 @@ h2 {
 
 h3, h4 {
   font-family: 'Raleway', sans-serif;
+}
+/* I should be able to sass the following to be better */
+nav > div > h2 > a {
+  color: $brand-base-white;
+  margin-left: 10px;
+  text-decoration: none;
+  font-family: 'Patua One', serif;
+}
+
+nav > div > h2 > a:hover {
+  color: $brand-base-white;
+  text-decoration: none;
 }

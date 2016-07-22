@@ -1,23 +1,6 @@
-<section class="row index-searches gutter-10">
-  <div class="col-lg-3">
-    <%= link_to "Submit a new movie!", new_movie_path, class: "btn btn-lg btn-primary" %>
-  </div>
-  <div class="col-lg-9">
-    <%= form_tag("/movies", method: "get", class: "navbar-form") do %>
-      <div class="form-group">
-        <%= label_tag :search, "Search", class: "form-label"  %>
-        <%= text_field_tag :search, 'Director/Title here', class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= label_tag :runtime_in_minutes, "Runtime", class: "form-label"  %>
-        <%= select_tag(:runtime_in_minutes, options_for_select([['Under 90 minutes', 1],['90-120 minutes', 2],['Over 120 minutes', 3]], 3), class: "form-control") %>
-      </div>
-      <%= submit_tag "Search", class: "btn btn-success" %>
-    <% end %>
-  </div>
-</section>
+<!-- top bar which contains a Submit New Movie button, search form for director/movie title, and runtime -->
+<%= render 'search_submit_bar' %>
 <br>
-
 <!-- @movies refers to movies partial and the iterations for movies. Rails magic. -->
 <%= render @movies %>
 
