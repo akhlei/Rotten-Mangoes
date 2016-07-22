@@ -1,5 +1,21 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
-  <div class="hvr-float">
-   <h2><%= link_to "Rotten Mangoes", root_path %></h2>
-  </div>
+  <section class="row">
+    <div class="hvr-float col-sm-3">
+      <h2><%= link_to "Rotten Mangoes", root_path %></h2>
+    </div>
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-6">
+      <h5 class="navbar-text navbar-right">   
+      <% if current_user %>
+        Signed in as <%= current_user.full_name %> (<%= link_to "Log Out", session_path("current"),method: :delete %>)
+      <% else %>
+        <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+      <% end %>
+      <% if current_user && current_user.admin == true %>
+        Admin menu <%= link_to "All Users", admin_users_path %>
+      <% end %>
+      </h5> 
+    </div>
+  </section>
 </nav>

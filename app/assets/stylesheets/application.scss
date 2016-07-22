@@ -21,6 +21,7 @@ $brand-mid-blue: #2980B9;
 $brand-dark-blue: #2C3E50;
 $brand-accent-red: #E74C3C;
 $brand-experiment-orange: #E7933E;
+$brand-dark-orange: #A16923 ;
 
 /* Class specific CSS */
 
@@ -34,6 +35,15 @@ $brand-experiment-orange: #E7933E;
   background-color: $brand-experiment-orange;
   margin-bottom: 10px;
 }
+
+.navbar-right {
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+.navbar-text {
+  color: white;
+  }
 
 .container {
   background: $brand-experiment-orange, 50%;
@@ -61,6 +71,22 @@ $brand-experiment-orange: #E7933E;
   transform: scale(1.05);
 }
 
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
+
 /* Selector specific CSS */
 
 h2 {
@@ -71,15 +97,23 @@ h2 {
 h3, h4 {
   font-family: 'Raleway', sans-serif;
 }
-/* I should be able to sass the following to be better */
-nav > div > h2 > a {
-  color: $brand-base-white;
+
+/* TODO: Need to refactor to inherit in a SASS manner, don't have a sass file watching yet  */
+nav > section > div > h2 > a, 
+  nav > section > div > h2 > a:hover, 
+    nav > section > div > h2 > a:focus {
+  color: white;
   margin-left: 10px;
   text-decoration: none;
   font-family: 'Patua One', serif;
 }
 
-nav > div > h2 > a:hover {
-  color: $brand-base-white;
-  text-decoration: none;
+
+
+div > h2 > a {
+  color: $brand-experiment-orange;
 }
+
+div > h2 > a:hover {
+  color: $brand-dark-orange;
+  }
