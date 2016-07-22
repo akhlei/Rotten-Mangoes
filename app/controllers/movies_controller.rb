@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
     if params[:search]
-      @movies = Movie.where("title like ? OR director like ?", "%#{params[:search]}%", "%#{params[:search]}%").where(runtime_cases)
+      @movies = Movie.title_director("%#{params[:search]}%", "%#{params[:search]}%").where(runtime_cases)
     else
       @movies = Movie.all
     end

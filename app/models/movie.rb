@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
+
   mount_uploader :poster, PosterUploader
   has_many :reviews 
   
@@ -29,5 +30,9 @@ class Movie < ActiveRecord::Base
     if release_date.present?
       errors.add(:release_date, "should be in the past") if release_date > Date.today
     end
+  end
+
+  def self.title_director(title, director)
+    where("title like ? OR director like ?", title, director)
   end
 end
