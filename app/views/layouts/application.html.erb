@@ -11,8 +11,10 @@
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value) %>
   <% end %>
-
-  <%= yield %>
+  <%= render 'layouts/masthead' %>
+  <div class="container">
+    <%= yield %>
+  </div>
   <%= render 'layouts/footer' %>
 </body>
 </html>

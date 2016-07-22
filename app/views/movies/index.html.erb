@@ -1,6 +1,4 @@
-<h1>Rotten Mangoes</h1>
 <%= link_to "Submit a new movie!", new_movie_path %>
-<hr>
 <%= form_tag("/movies", method: "get") do %>
   <%= label_tag(:search, "Search") %>
   <%= text_field_tag(:search) %>
