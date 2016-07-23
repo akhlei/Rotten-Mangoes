@@ -37,13 +37,14 @@ $brand-dark-orange: #A16923 ;
 }
 
 .navbar-right {
-  margin-right: 10px;
-  margin-bottom: 0px;
+  margin-right: 3px;
+  color: white;
 }
 
-.navbar-text {
-  color: white;
-  }
+.nav-right-div {
+  margin-top: 1.75em;
+}
+
 
 .container {
   background: $brand-experiment-orange, 50%;
@@ -107,7 +108,6 @@ nav > section > div > h2 > a,
   text-decoration: none;
   font-family: 'Patua One', serif;
 }
-
 
 
 div > h2 > a {
