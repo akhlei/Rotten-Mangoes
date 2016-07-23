@@ -1,5 +1,6 @@
 <footer class="footer">
-  <small>
+<!-- Omit for now, may need later but footer currently not utilized-->
+<!--   <small>
     <% if current_user %>
       Signed in as <%= current_user.full_name %> (<%= link_to "Log Out", session_path("current"),method: :delete %>)
     <% else %>
@@ -8,5 +9,5 @@
     <% if current_user && current_user.admin == true %>
       Admin menu <%= link_to "All Users", admin_users_path %>
     <% end %>
-  </small>
+  </small> -->
 </footer>
