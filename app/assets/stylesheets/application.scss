@@ -23,6 +23,35 @@ $brand-accent-red: #E74C3C;
 $brand-experiment-orange: #E7933E;
 $brand-dark-orange: #A16923 ;
 
+
+/* Global CSS selector styles - many overridden */
+a {
+  color: $brand-experiment-orange;
+}
+
+a:hover {
+  color: $brand-dark-orange;
+  }
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+h3, h4 {
+  font-family: 'Raleway', sans-serif;
+}
+
+nav > section > div > h2 > a, 
+  nav > section > div > h2 > a:hover, 
+    nav > section > div > h2 > a:focus {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+  font-family: 'Patua One', serif;
+}
+
+
 /* Class specific CSS */
 
 .alert-success div {
@@ -31,34 +60,11 @@ $brand-dark-orange: #A16923 ;
   margin-top: auto; 
 }
 
-.navbar-default {
-  background-color: $brand-experiment-orange;
-  margin-bottom: 10px;
-}
-
-.navbar-right {
-  margin-right: 3px;
-  color: white;
-}
-
-.nav-right-div {
-  margin-top: 1.75em;
-}
-
-
 .container {
   background: $brand-experiment-orange, 50%;
 }
 
-.small-poster {
-  width: 360px;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
-}
-
+/*nav-bar and nav-bar hover animations */
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;
@@ -87,33 +93,33 @@ $brand-dark-orange: #A16923 ;
   transform: translateY(-8px);
 }
 
-
-/* Selector specific CSS */
-
-h2 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
+.navbar-default {
+  background-color: $brand-experiment-orange;
+  margin-bottom: 10px;
 }
 
-h3, h4 {
-  font-family: 'Raleway', sans-serif;
-}
-
-/* TODO: Need to refactor to inherit in a SASS manner, don't have a sass file watching yet  */
-nav > section > div > h2 > a, 
-  nav > section > div > h2 > a:hover, 
-    nav > section > div > h2 > a:focus {
+.navbar-right {
+  margin-right: 3px;
   color: white;
-  margin-left: 10px;
-  text-decoration: none;
-  font-family: 'Patua One', serif;
 }
 
-
-div > h2 > a {
-  color: $brand-experiment-orange;
+.navbar-right > a {
+  color: white;
 }
 
-div > h2 > a:hover {
-  color: $brand-dark-orange;
-  }
+.navbar-right > a:hover{
+  color: white;
+}
+
+.nav-right-div {
+  margin-top: 1.75em;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.small-poster {
+  width: 360px;
+}
