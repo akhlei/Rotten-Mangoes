@@ -59,6 +59,19 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def update
+    if current_user.admin?
+      @user = User.find(params[:id])
+      if @user.update_attributes(user_params)
+        redirect_to admin_user_path(@user), notice: "User #{@user.email} was successfully updated."
+      else
+        render :edit
+      end
+    else
+      not_admin_redirect
+    end
+  end
+
   protected
 
   def user_params
@@ -66,4 +79,5 @@ class Admin::UsersController < ApplicationController
       :email, :firstname, :lastname, :password, :password_confirmation, :admin
     )
   end
+
 end
