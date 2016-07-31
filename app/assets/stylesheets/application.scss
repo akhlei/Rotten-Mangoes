@@ -9,19 +9,21 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- **/
+ *
+ //=require movies
+ //=require admin/users
+ */
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* Brand Colors */
-$brand-base-white: #ECF0F1;
-$brand-light-blue: #3498DB;
-$brand-mid-blue: #2980B9;
-$brand-dark-blue: #2C3E50;
-$brand-accent-red: #E74C3C;
+$brand-base-white: #ECF0F1; 
+$brand-green: #5cb85c;
 $brand-experiment-orange: #E7933E;
-$brand-dark-orange: #A16923 ;
+$brand-dark-orange: #A16923;
+$site-display-font: 'Patua One', serif;
+$site-main-header-font: 'Raleway', sans-serif;
 
 
 /* Global CSS selector styles - many overridden */
@@ -33,13 +35,14 @@ a:hover {
   color: $brand-dark-orange;
   }
 
+
 h2 {
-  font-family: 'Raleway', sans-serif;
+  font-family: $site-main-header-font;
   font-weight: 700;
 }
 
 h3, h4 {
-  font-family: 'Raleway', sans-serif;
+  font-family: $site-main-header-font;
 }
 
 nav > section > div > h2 > a, 
@@ -48,7 +51,7 @@ nav > section > div > h2 > a,
   color: white;
   margin-left: 10px;
   text-decoration: none;
-  font-family: 'Patua One', serif;
+  font-family: $site-display-font;
 }
 
 

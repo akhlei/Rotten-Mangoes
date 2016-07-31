@@ -1,6 +1,6 @@
-<%= link_to "Back to admin user page", admin_users_path %><br>
+<%= link_to "Back to admin user page", admin_users_path, class: "btn btn-md btn-success" %><br>
 
-<h3><%= link_to "Edit", edit_admin_user_path(@user) %>, <%= link_to "Delete", admin_user_path(@user), method: :delete, data: {confirm: "You sure?"} %></h3>
-<h3>Email: </h3><p><%= @user.email %></p>
-<p><h3>First Name:</h3> <%= @user.firstname %> <h3>Last Name:</h3> <%= @user.lastname %></p>
-<p><h3>Password: (I probably shouldn't show this) </h3><%= @user.password_digest %></p> 
+<h3>Email: </h3><h4><%= @user.email %></h4>
+<h3>First Name:</h3> <h4><%= @user.firstname %></h4> <h3>Last Name:</h3> <h4><%= @user.lastname %></h4>
+<h4><h3>Password - (admin purposes): </h3><%= @user.password_digest %></h4>
+<h2><%= link_to "Edit", edit_admin_user_path(@user) %>, <%= link_to "Delete", admin_user_path(@user), method: :delete, data: {confirm: "You sure?"} %></h2> 
