@@ -22,6 +22,8 @@ $brand-base-white: #ECF0F1;
 $brand-green: #5cb85c;
 $brand-experiment-orange: #E7933E;
 $brand-dark-orange: #A16923;
+$brand-dark-blue: #2980B9;
+$brand-light-blue: #3498DB;
 $site-display-font: 'Patua One', serif;
 $site-main-header-font: 'Raleway', sans-serif;
 
@@ -107,11 +109,11 @@ nav > section > div > h2 > a,
 }
 
 .navbar-right > a {
-  color: white;
+  color: $brand-dark-blue;
 }
 
 .navbar-right > a:hover{
-  color: white;
+  color: $brand-light-blue;
 }
 
 .nav-right-div {
