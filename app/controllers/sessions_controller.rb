@@ -3,10 +3,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])   #this find_by should be an active record method
-
-    if user && user.authenticate(params[:password])  # if a user present, and authenticate against their entered password (securepassword rails method)
-      session[:user_id] = user.id   # then we set the id of the session equal to that of the users id 
+    user = User.find_by(email: params[:email])   
+    if user && user.authenticate(params[:password])  
+      session[:user_id] = user.id   
       redirect_to movies_path, notice: "Welcome back, #{user.firstname}!"
     else
       flash.now[:alert] = "Login failed...please try again."
